@@ -59,8 +59,8 @@ test:
   <<: *default
   host: localhost
   username: postgres
-  database: rails-github-action_test
-  password:
+  database: <%= rails-github-action_test || 'tsv_uploader_test' %>
+  password: ENV["POSTGRES_PASSWORD"]
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
