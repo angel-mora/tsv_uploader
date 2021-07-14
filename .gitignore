@@ -40,3 +40,6 @@ yarn-debug.log*
 
 # Ignore package-lock.json
 package-lock.json
+
+# Ignore SimpleCov files
+coverage
