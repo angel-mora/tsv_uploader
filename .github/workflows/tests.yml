@@ -4,7 +4,7 @@ env:
   POSTGRES_PASSWORD: postgres
   POSTGRES_DB: postgres
 
-name: RSpec
+name: Tests
 on: [push,pull_request]
 jobs:
   rspec-test:
@@ -35,6 +35,10 @@ jobs:
           bundler exec rails db:migrate RAILS_ENV=test
       - name: Run tests
         run: bundler exec rake
+          env:
+            RAILS_ENV: test
+            POSTGRES_USER: postgres
+            POSTGRES_PASSWORD: postgres
       - name: Upload coverage results    
         uses: actions/upload-artifact@master
         if: always()
