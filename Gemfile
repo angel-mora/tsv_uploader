@@ -28,6 +28,7 @@ gem 'jbuilder', '~> 2.7'
 # Project-specific gems
 gem 'devise', '~> 4.8'
 gem 'figaro', '~> 1.2'
+gem 'haml', '~> 5.2.1'
 gem 'omniauth-github', '~> 2.0'
 
 # Reduces boot times through caching; required in config/boot.rb
@@ -35,12 +36,15 @@ gem 'bootsnap', '>= 1.4.4', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'better_errors', '~> 2.1', '>= 2.1.1'
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'capybara', '~> 3.35', '>= 3.35.3'
   gem 'factory_bot', '~> 6.2'
   gem 'rspec-rails', '~> 5.0', '>= 5.0.1'
   gem 'rubocop', '~> 1.18', '>= 1.18.3'
   gem 'shoulda-matchers', '~> 5.0'
+  gem 'binding_of_caller', '~> 1.0.0'
+  gem 'pry', '~> 0.14.1'
 end
 
 group :development do

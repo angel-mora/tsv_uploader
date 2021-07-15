@@ -1,4 +1,9 @@
-class ReportsController < ActionController::Base
+class UsersController < ActionController::Base
+  def index
+    @user = User.create!
+    @reports = @user.reports.all
+  end
+
   def self.import(file)
     counter = 0
     CSV.foreach(file.path, headers: true, header_converters: :symbol) do |row|

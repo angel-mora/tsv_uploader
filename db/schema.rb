@@ -16,6 +16,12 @@ ActiveRecord::Schema.define(version: 2021_07_14_163459) do
   enable_extension "plpgsql"
 
   create_table "reports", force: :cascade do |t|
+    t.string "comprador"
+    t.text "descripcion_del_item"
+    t.float "precio_del_item"
+    t.integer "total_de_items"
+    t.string "direccion_del_vendedor"
+    t.string "vendedor"
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
