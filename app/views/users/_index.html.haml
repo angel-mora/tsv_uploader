@@ -1,0 +1,22 @@
+%h1 All Reports!
+%table
+  %tr
+    %th Comprador
+    %th Descripción del Item
+    %th Precio del Item
+    %th Total de Items
+    %th Dirección del vendedor
+    %th Vendedor
+  %tr
+    - @reports.each do |transaction|
+      %tr
+        %td= transaction.comprador
+        %td= transaction.descripcion_del_item
+        %td= transaction.precio_del_item
+        %td= transaction.total_de_items
+        %td= transaction.direccion_del_vendedor
+        %td= transaction.vendedor
+= form_tag import_user_reports_path(@users, @reports), action: :import, method: :post, multipart: true do |f|
+  = f.label :file
+  = f.file_field :file
+  = f.submit_tag 'Upload'

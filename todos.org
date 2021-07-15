@@ -1,0 +1,9 @@
+* Test CSV uploading process
+* Add some basic Bootstrap layout
+* Autenticación con Devise o GitHub
+* Subir a Heroku
+* Añadir README
+
+- Señalar que se cumplió el Git Flow.
+
+* (Opcional) Configurar Docker compose
