@@ -1,0 +1,27 @@
+<h1>All Reports!</h1>
+<table>
+  <tr>
+    <th>Comprador</th>
+    <th>Descripción del Item</th>
+    <th>Precio del Item</th>
+    <th>Total de Items</th>
+    <th>Dirección del vendedor</th>
+    <th>Vendedor</th>
+  </tr>
+  <tbody>
+    <%= @user.reports.each do |transaction| %>
+      <tr>
+        <%= content_tag :td, transaction.comprador %>
+        <%= content_tag :td, transaction.descripcion_del_item %>
+        <%= content_tag :td, transaction.precio_del_item %>
+        <%= content_tag :td, transaction.total_de_items %>
+        <%= content_tag :td, transaction.direccion_del_vendedor %>
+        <%= content_tag :td, transaction.vendedor %>
+      <tr>
+    <% end %>
+  </tbody>
+<%= form_for import_user_reports_path(@user, @report), multipart: true do |f| %>
+  <%= f.label :file %>
+  <%= f.file_field :file %>
+  <%= f.submit 'Upload' %>
+<% end %>
